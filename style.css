@@ -1,0 +1,311 @@
+:root{
+    --fonte1: #000;
+    --fonte2: #fff;
+    --bg1: #fff;
+    --bg2: #ADD8E6;
+    --nav: #2B3784;
+    --card0: #B11313;
+    --card1: #6ACADF;
+    --card2: #F5F86D;
+    --card3: #E177F0;
+    --card4: #668A3C;
+    --card5: #E90004;
+    --card6: #53C099;
+}
+
+.temaEscuro{
+    --fonte2: #000;
+    --fonte1: #fff;
+    --bg1: #35363A  ;
+    --bg2: #202124;
+    --nav: #0C0F21;
+    --card0: #B11313;
+    --card1: #407AAB; 
+    --card2: #A7A728;  
+    --card3: #9449B8; 
+    --card4: hsl(90, 40%, 20%); 
+    --card5: hsl(0, 80%, 20%); 
+    --card6: hsl(140, 50%, 20%); 
+}
+
+.head {
+    text-align: center;
+    background-image: url('imagens/header.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    object-fit: cover;
+    padding: 100px 0;
+    margin: 0%;
+    border: 0%;
+}
+
+.head-text {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    max-width: 27%;
+    text-align: center;
+    background: #2B3784;
+    margin: 0 auto;
+}
+
+body {
+    background-color: var(--bg2);
+    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto Mono', monospace;
+    color: var(--fonte1);
+}
+
+.navegacao {
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    margin: 0 0 0 0;
+    padding: 0px;
+    border: 0px;
+    background-color: var(--nav);
+}
+
+.navegacao a {
+    font-size: medium;
+    color: white;
+}
+
+.descricao {
+    font-size: medium;
+    text-align: left;
+    font-weight: lighter;
+    margin: 10px 0 10px 0;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: var(--bg1);
+    align-items: center;
+}
+
+.descricao p {
+    border: 10px;
+    padding: 10px;
+    margin: 0 10px 0 10px;
+}
+
+.descricao h2 {
+    border: 10px;
+    padding: 10px;
+    margin: 0 10px 0 10px;
+}
+
+.descricao img {
+    width: 75%;
+    max-width: 300px;
+    height: 50%;
+    max-height: 300px;
+    object-fit: cover;
+    margin: 10px 20px 10px 0;
+}
+
+.palestrantes-page {
+    background-color: var(--bg1);
+    padding: 0 10% 5% 10%;
+}
+
+#palestrantes {
+    display: flex;
+    justify-content: space-around;
+}
+
+.palestrantes-list{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 5% 0 0 0;
+}
+
+.palestrantes-introducao {
+    font-size: medium;
+    text-align: left;
+    font-weight: lighter;
+    margin: 10px;
+}
+
+.palestrantes h2 {
+    padding-top: 10px;
+    text-align: center;
+}
+
+.palestrantes p {
+    margin: 10px;
+}
+
+.palestrante h3{
+    color: var(--fonte1);
+}
+
+.palestrante p {
+    max-width: 200px;
+    color: var(--fonte1);   
+}
+
+.palestrantes img {
+    max-width: 200px;
+    max-height: 200px;
+    object-fit: cover;
+    border: 1px solid black;
+}
+
+.palestrante {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+#palestrante1{
+    background-color: var(--card1);
+}
+
+#palestrante2{
+    background-color: var(--card2);
+}
+
+#palestrante3{
+    background-color: var(--card3);
+}
+
+#palestrante4{
+    background-color: var(--card4);
+}
+
+#palestrante5{
+    background-color: var(--card5);
+}
+
+#palestrante6{
+    background-color: var(--card6);
+}
+
+.programacao {
+    margin-top: 10px;
+    padding: 10px 0 0 10px;
+    background-color: var(--bg1);
+}
+
+.programacao h2 {
+    text-align: left;
+}
+
+.programacao table {
+    text-align: center;
+    padding: 0 30px 10px 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.programacao td {
+    border: 1px solid black;
+    color: var(--fonte1);
+}
+
+.inscricao {
+    margin: 10px;
+    text-align: center;
+    justify-content: center;
+}
+
+#inscricao-input-text {
+    width: 50%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto Mono', monospace;
+    background-color: var(--bg1);
+}
+
+input::placeholder{
+    color:  var(--fonte1);
+}
+
+#inscricao-input-email {
+    width: 70%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto Mono', monospace;
+    background-color: var(--bg1);
+}
+
+#inscricao-select {
+    width: 20%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: var(--bg1);
+    color: var(--fonte1);
+    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.inscricao textarea {
+    width: 70%;
+    height: 150px;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: var(--bg1);
+    color: var(--fonte1);
+}
+
+.imput-radio {
+    display: flex;
+    flex-direction: row;
+}
+
+.botao {
+    background-color: #58B996;
+    color: var(--fonte2);
+    width: 100px;
+    margin: 10px;
+    padding: 5px;
+    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto Mono', monospace;
+    border-radius: 4px;
+    border: 0;
+}
+
+.dados-secundarios {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    padding: 10px 0 10px 0;
+    margin: 0 15% 10px 15%;
+    width: 70%;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: var(--bg1);
+}
+
+aside {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 0 15% 10px 15%;
+    background-color: var(--bg1);
+}
+
+footer {
+    background-color: var(--bg1);
+    padding: 20px;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
