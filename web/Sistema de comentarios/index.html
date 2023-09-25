@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>comentarios</title>
+    <link rel="stylesheet" href="/assets/lib/bootstrap/bootstrap.css">
+</head>
+<body>
+    <div class="modal fade" id="confirmDeleteModal" tabindex="-1" role="dialog" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmDeleteModalLabel">Confirmar Exclusão</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Tem certeza de que deseja excluir este comentário?
+                </div>
+                <div class="modal-footer">
+                    <!-- Botão "Cancelar" fecha o modal -->
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <!-- Botão "Excluir" pode realizar a ação de exclusão -->
+                    <button type="button" class="btn btn-danger" id="deleteComment">Excluir</button>
+                </div>
+            </div>
+        </div>
+    </div>  
+
+
+    <div class="mx-5">
+        <h1 class="d-flex justify-content-center">Sistema de comentários</h1>
+        <form action="comentarios" id="comentario-form">
+            <label for="exampleFormControlTextarea1">Comentários</label>
+            <textarea class="form-control" id="comentario-textearea" rows="3"></textarea>
+            <div class="d-flex justify-content-center ">
+                <button type="submit" class="btn btn-primary m-3" id="comentario-botao">Enviar Comentário</button>
+            </div>
+            <div id="exibicao-comentarios">
+                <ul id="lista" class="list-group">
+                </ul>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+<script src="assets/lib/bootstrap/bootstrap.js"></script>
+<script src="assets/lib/jquery/jquery.js"></script>
+<script src="/assets/scripts/script.js"></script> 
