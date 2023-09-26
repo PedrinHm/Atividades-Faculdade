@@ -1,9 +1,9 @@
 import pickle
 
 def adicionar_contato():
-    nome = input("nome:")
-    telefone = input("Número de telefone do "+nome+": ")
-    email = input("E-mail do "+nome+": ")
+    nome = input("Digite o nome do contato: ")
+    telefone = input("Digite o número de telefone do contato: ")
+    email = input("Digite o e-mail do contato: ")
 
     contato = {
         "Nome": nome,
@@ -27,6 +27,7 @@ def salvar_contatos():
     with open("contatos.pkl", "wb") as arquivo:
         pickle.dump(contatos, arquivo)
 
+
 def main():
     global contatos
     try:
@@ -37,8 +38,8 @@ def main():
 
     while True:
         print("\nOpções:")
-        print("1. Adicionar")
-        print("2. Listar")
+        print("1. Adicionar contato")
+        print("2. Listar contatos")
         print("3. Sair")
 
         opcao = input("Escolha uma opção: ")
