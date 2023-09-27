@@ -22,29 +22,18 @@ $(document).ready(function () {
   });
 
   $(document).on("click", ".comentario-botao-excluir", function () {
-    const comentarioAExcluir = $(this).closest("li");
-    $("#confirmDeleteModal").data("comentario-a-excluir", comentarioAExcluir);
+    const comentario_excluir = $(this).closest("li");
+    $("#confirmDeleteModal").data("comentario-a-excluir", comentario_excluir);
     $("#confirmDeleteModal").modal("show");
   });
 
   $("#deleteComment").click(function () {
-    const comentarioAExcluir = $("#confirmDeleteModal").data(
-      "comentario-a-excluir"
-    );
+    const comentario_excluir = $("#confirmDeleteModal").data("comentario-a-excluir");
 
-    if (comentarioAExcluir) {
-      comentarioAExcluir.remove();
+    if (comentario_excluir) {
+      comentario_excluir.remove();
     }
-
     $("#confirmDeleteModal").modal("hide");
-  });
-
-  $().click(function () {
-    ordenarComentariosCrescente();
-  });
-
-  $("").click(function () {
-    ordenarComentariosDecrescente();
   });
 
   $("#ordenar-decrescente").click(function () {
@@ -56,10 +45,15 @@ $(document).ready(function () {
   });
 
   function numOrdDesc(a, b) {
-    return $(b).val() < $(a).val() ? 1 : -1;
+    const dataA = new Date($(a).data("data-adicao"));
+    const dataB = new Date($(b).data("data-adicao"));
+    return dataB - dataA;
   }
-
+  
   function numOrdCres(a, b) {
-    return $(b).val() > $(a).val() ? 1 : -1;
+    const dataA = new Date($(a).data("data-adicao"));
+    const dataB = new Date($(b).data("data-adicao"));
+    return dataA - dataB;
   }
+  
 });
