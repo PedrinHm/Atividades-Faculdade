@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
@@ -8,7 +7,6 @@
     <title>comentarios</title>
     <link rel="stylesheet" href="/assets/lib/bootstrap/bootstrap.css">
 </head>
-
 <body>
     <div class="modal fade" id="confirmDeleteModal" tabindex="-1" role="dialog"
         aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
@@ -24,16 +22,12 @@
                     Tem certeza de que deseja excluir este comentário?
                 </div>
                 <div class="modal-footer">
-                    <!-- Botão "Cancelar" fecha o modal -->
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                    <!-- Botão "Excluir" pode realizar a ação de exclusão -->
                     <button type="button" class="btn btn-danger" id="deleteComment">Excluir</button>
                 </div>
             </div>
         </div>
     </div>
-
-
     <div class="mx-5">
         <h1 class="d-flex justify-content-center">Sistema de comentários</h1>
         <form action="comentarios" id="comentario-form">
@@ -42,8 +36,8 @@
             <div class="d-flex justify-content-center ">
                 <button type="submit" class="btn btn-primary m-3" id="comentario-botao">Enviar Comentário</button>
             </div>
-            <button id="ordenar-crescente" class="btn btn-primary">Ordenar Crescente</button>
-            <button id="ordenar-decrescente" class="btn btn-primary">Ordenar Decrescente</button>
+            <button type="submit"  id="ordenar-crescente" class="btn btn-primary">Ordenar Crescente</button>
+            <button type="submit"  id="ordenar-decrescente" class="btn btn-primary">Ordenar Decrescente</button>
             <div id="exibicao-comentarios">
                 <ul id="lista" class="list-group">
                 </ul>
@@ -51,7 +45,6 @@
         </form>
     </div>
 </body>
-
 </html>
 <script src="assets/lib/bootstrap/bootstrap.js"></script>
 <script src="assets/lib/jquery/jquery.js"></script>

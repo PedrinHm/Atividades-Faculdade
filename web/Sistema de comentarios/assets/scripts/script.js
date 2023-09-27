@@ -1,55 +1,65 @@
 $(document).ready(function () {
-    // ... código anterior ...
+  $("#comentario-form").on("submit", function (event) {
+    event.preventDefault();
 
-    $('#comentario-form').on('submit', function (event) {
-        event.preventDefault();
+    const comentario_texto = $("#comentario-textearea").val();
+    const contador = $('<span class="ml-2">0</span>');
+    const botao_Curtir = $('<button type="button" class="btn btn-primary mt-3 comentario-botao-like">Like <span class="contador">0</span></button>');
+    const botao_Excluir = $('<button type="button" class="btn btn-danger mt-3 comentario-botao-excluir" data-toggle="modal" data-target="#myModal">Excluir</button>');
+    const botoes = $('<div class="btn-group position-absolute bottom-0 end-0">').append(botao_Curtir).append(botao_Excluir);
+    const Comentario = $('<li class="list-group-item">').text(comentario_texto).append(botoes).data("data-adicao", new Date());
 
-        const novoComentario = $('#comentario-textearea').val();
-        const contador = $('<span class="ml-2">0</span>');
-        const botaoLike = $('<button type="submit" class="btn btn-primary mt-3" id="comentario-botao-like">Like <span class="contador"></span></button>');
-        const botaoExcluir = $('<button type="button" class="btn btn-danger mt-3 comentario-botao-excluir" data-toggle="modal" data-target="#myModal">Excluir</button>');
-        const botoes = $('<div class="btn-group position-absolute bottom-0 end-0">').append(botaoLike).append(botaoExcluir);
-        const novoItem = $('<li class="list-group-item">').text(novoComentario).append(botoes);
-        
-        // Defina o atributo de dados 'data-adicao' no momento da criação do item
-        $(novoItem).data('data-adicao', new Date());
+    if (comentario_texto != "") {
+      $("#lista").append(Comentario);
+      $("#comentario-textearea").val("");
+    }
 
-        if (novoComentario != '') {
-            $('#lista').append(novoItem);
-            $('#comentario-textearea').val('');
-        }
-
-        let likes = 0;
-        botaoLike.click(function () {
-            likes++;
-            botaoLike.find('.contador').text(likes);
-        });
+    let curtidas = 0;
+    $(botao_Curtir).click(function () {
+      curtidas++;
+      $(this).find(".contador").text(curtidas);
     });
+  });
 
-    $('#ordenar-crescente').click(function () {
-        ordenarComentarios(true); // Ordenar em ordem crescente
-    });
+  $(document).on("click", ".comentario-botao-excluir", function () {
+    const comentarioAExcluir = $(this).closest("li");
+    $("#confirmDeleteModal").data("comentario-a-excluir", comentarioAExcluir);
+    $("#confirmDeleteModal").modal("show");
+  });
 
-    $('#ordenar-decrescente').click(function () {
-        ordenarComentarios(false); // Ordenar em ordem decrescente
-    });
+  $("#deleteComment").click(function () {
+    const comentarioAExcluir = $("#confirmDeleteModal").data(
+      "comentario-a-excluir"
+    );
+
+    if (comentarioAExcluir) {
+      comentarioAExcluir.remove();
+    }
+
+    $("#confirmDeleteModal").modal("hide");
+  });
+
+  $().click(function () {
+    ordenarComentariosCrescente();
+  });
+
+  $("").click(function () {
+    ordenarComentariosDecrescente();
+  });
+
+  $("#ordenar-decrescente").click(function () {
+    $("#lista li").sort(numOrdDesc).appendTo("#lista");
+  });
+
+  $("#ordenar-crescente").click(function () {
+    $("#lista li").sort(numOrdCres).appendTo("#lista");
+  });
+
+  function numOrdDesc(a, b) {
+    return $(b).val() < $(a).val() ? 1 : -1;
+  }
+
+  function numOrdCres(a, b) {
+    return $(b).val() > $(a).val() ? 1 : -1;
+  }
 });
-
-function ordenarComentarios(crescente) {
-    const listaComentarios = $('#lista');
-    const comentarios = listaComentarios.find('li').toArray();
-
-    comentarios.sort(function (a, b) {
-        const dataA = $(a).data('data-adicao').getTime();
-        const dataB = $(b).data('data-adicao').getTime();
-        
-        if (crescente) {
-            return dataA - dataB;
-        } else {
-            return dataB - dataA;
-        }
-    });
-
-    listaComentarios.empty();
-    $(comentarios).appendTo(listaComentarios);
-}
