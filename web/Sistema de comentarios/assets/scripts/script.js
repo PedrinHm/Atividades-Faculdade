@@ -1,4 +1,6 @@
 $(document).ready(function () {
+    // ... código anterior ...
+
     $('#comentario-form').on('submit', function (event) {
         event.preventDefault();
 
@@ -8,6 +10,9 @@ $(document).ready(function () {
         const botaoExcluir = $('<button type="button" class="btn btn-danger mt-3 comentario-botao-excluir" data-toggle="modal" data-target="#myModal">Excluir</button>');
         const botoes = $('<div class="btn-group position-absolute bottom-0 end-0">').append(botaoLike).append(botaoExcluir);
         const novoItem = $('<li class="list-group-item">').text(novoComentario).append(botoes);
+        
+        // Defina o atributo de dados 'data-adicao' no momento da criação do item
+        $(novoItem).data('data-adicao', new Date());
 
         if (novoComentario != '') {
             $('#lista').append(novoItem);
@@ -21,23 +26,30 @@ $(document).ready(function () {
         });
     });
 
-    $(document).on("click", ".comentario-botao-excluir", function () {
-        const comentarioAExcluir = $(this).closest("li");
-        $("#confirmDeleteModal").data("comentario-a-excluir", comentarioAExcluir);
-        $("#confirmDeleteModal").modal("show");
+    $('#ordenar-crescente').click(function () {
+        ordenarComentarios(true); // Ordenar em ordem crescente
     });
 
-    $("#deleteComment").click(function () {
-        const comentarioAExcluir = $("#confirmDeleteModal").data("comentario-a-excluir");
-
-        if (comentarioAExcluir) {
-            comentarioAExcluir.remove();
-        }
-
-        $("#confirmDeleteModal").modal("hide");
-    });
-
-    $("#confirmDeleteModal .btn-secondary").click(function () {
-        $("#confirmDeleteModal").modal("hide");
+    $('#ordenar-decrescente').click(function () {
+        ordenarComentarios(false); // Ordenar em ordem decrescente
     });
 });
+
+function ordenarComentarios(crescente) {
+    const listaComentarios = $('#lista');
+    const comentarios = listaComentarios.find('li').toArray();
+
+    comentarios.sort(function (a, b) {
+        const dataA = $(a).data('data-adicao').getTime();
+        const dataB = $(b).data('data-adicao').getTime();
+        
+        if (crescente) {
+            return dataA - dataB;
+        } else {
+            return dataB - dataA;
+        }
+    });
+
+    listaComentarios.empty();
+    $(comentarios).appendTo(listaComentarios);
+}
