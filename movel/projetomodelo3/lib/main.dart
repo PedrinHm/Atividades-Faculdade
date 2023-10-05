@@ -24,12 +24,20 @@ class MyApp extends StatelessWidget {
                 ),
               color: Color.fromARGB(255, 255, 255, 255),
             ),
-            child: const Text(
+            child: Container(
+              margin: const EdgeInsets.only(
+                left: 30.0,
+                top: 50.0,    
+                right: 300.0, 
+                bottom: 15.0, 
+               ),
+              child: const Text(
               'Spanish language', 
-              textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 33),
-              
+              textAlign: TextAlign.left,
+              style: TextStyle(fontSize: 40),
+
               ),
+            ),
           ),
         ),
       ),
