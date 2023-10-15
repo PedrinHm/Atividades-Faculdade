@@ -39,22 +39,22 @@ class MyApp extends StatelessWidget {
                           Column(
                             children: [
                               newMethod(
-                                text: 'Tarefa 1',
-                                subText: 'Ir para Academia',
+                                text: 'Tarefa 4',
+                                subText: 'Criar tela 1',
                                 icon: Icons.check_circle,
-                                image: Image.asset('images/academia.png'),
-                              ),
-                              newMethod(
-                                text: 'Tarefa 2',
-                                subText: 'Jogo do mengo',
-                                icon: Icons.check_circle,
-                                image: Image.asset('images/mengo.png'),
+                                image: Image.asset('images/tela1.png'),
                               ),
                               newMethod(
                                 text: 'Tarefa 3',
-                                subText: 'Jogar valorant',
+                                subText: 'Criar tela 2',
                                 icon: Icons.check_circle,
-                                image: Image.asset('images/valorant.png'),
+                                image: Image.asset('images/tela1.png'),
+                              ),
+                              newMethod(
+                                text: 'Tarefa 2',
+                                subText: 'Configurar ambiente',
+                                icon: Icons.check_circle,
+                                image: Image.asset('images/ambiente.png'),
                               ),
                               newMethod(
                                 text: 'Tarefa 1',
@@ -116,7 +116,7 @@ class MyApp extends StatelessWidget {
             margin:
                 EdgeInsets.only(left: 20.0, right: 20.0, top: 20, bottom: 15),
             child: Text(
-              "Listinha",
+              "Dev. Mobile",
               style: TextStyle(
                 fontSize: 37,
                 fontFamily: 'Futura',
