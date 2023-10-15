@@ -57,7 +57,7 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   assets:
-    - assets/images/avatar_1.png
+    - assets/images/
   
   uses-material-design: true
 
