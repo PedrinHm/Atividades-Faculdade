@@ -8,11 +8,12 @@ import java.sql.PreparedStatement;
 import java.sql.Statement;
 
 public class MySQLDAO {
-    public static final String DRIVER = "com.mysql.jdbc.Driver";
-    public static final String DBURL = "jdbc:mysql:///127.0.0.1";
-    private static Connection con;
 
-    // metodo para criar a conexao com MySQL
+    public static final String DRIVER = "com.mysql.cj.jdbc.Driver";
+    public static final String DBURL = "jdbc:mysql://localhost:3306/bookshare";
+    private static Connection con;
+// metodo para criar a conexao com MySQL
+
     public static Connection getConnection() {
         if (con == null) {
             try {
@@ -54,7 +55,6 @@ public class MySQLDAO {
                 update = rs.getLong(1);
             }
             psmt.close();
-
         } catch (SQLException e) {
             e.printStackTrace();
         }

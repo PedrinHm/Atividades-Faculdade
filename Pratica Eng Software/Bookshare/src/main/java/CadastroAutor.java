@@ -14,7 +14,8 @@ public class CadastroAutor extends JFrame {
         setSize(400, 200);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
-        JPanel panel = new JPanel(new GridLayout(4, 2));
+        JPanel panel = new JPanel(new GridLayout(4, 2
+        ));
         getContentPane().add(panel);
 
         JLabel IDAutorLabel = new JLabel("ID do Autor:");
