@@ -12,66 +12,68 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         backgroundColor: Color(0xffffc89f),
-        body: Container(
-          child: Column(
-            children: [
-              Container(
-                color: Color(0xffffc89f),
-                height: 318,
-                width: double.infinity,
-                child: Image.asset('images/avatar1.png'),
-              ),
-              Container(
-                child: Stack(
-                  children: [
-                    newMethod2(
-                      backgroundColor: Colors.white,
-                      borderRadius: BorderRadius.only(
-                        topRight: Radius.circular(50),
-                        topLeft: Radius.circular(50),
-                      ),
-                    ),
-                    Container(
-                      child: Column(
-                        children: [
-                          newMethod4(),
-                          newMethod5(),
-                          Column(
-                            children: [
-                              newMethod(
-                                text: 'Tarefa 4',
-                                subText: 'Criar tela 1',
-                                icon: Icons.check_circle,
-                                image: Image.asset('images/tela1.png'),
-                              ),
-                              newMethod(
-                                text: 'Tarefa 3',
-                                subText: 'Criar tela 2',
-                                icon: Icons.check_circle,
-                                image: Image.asset('images/tela1.png'),
-                              ),
-                              newMethod(
-                                text: 'Tarefa 2',
-                                subText: 'Configurar ambiente',
-                                icon: Icons.check_circle,
-                                image: Image.asset('images/ambiente.png'),
-                              ),
-                              newMethod(
-                                text: 'Tarefa 1',
-                                subText: 'Estudar Flutter',
-                                icon: Icons.check_circle,
-                                image: Image.asset(
-                                    'images/flutterIcon-removebg-preview.png'),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
+        body: SingleChildScrollView(
+          child: Container(
+            child: Column(
+              children: [
+                Container(
+                  color: Color(0xffffc89f),
+                  height: 318,
+                  width: double.infinity,
+                  child: Image.asset('images/avatar1.png'),
                 ),
-              ),
-            ],
+                Container(
+                  child: Stack(
+                    children: [
+                      newMethod2(
+                        backgroundColor: Colors.white,
+                        borderRadius: BorderRadius.only(
+                          topRight: Radius.circular(50),
+                          topLeft: Radius.circular(50),
+                        ),
+                      ),
+                      Container(
+                        child: Column(
+                          children: [
+                            newMethod4(),
+                            newMethod5(),
+                            Column(
+                              children: [
+                                newMethod(
+                                  text: 'Tarefa 4',
+                                  subText: 'Criar tela 1',
+                                  icon: Icons.check_circle,
+                                  image: Image.asset('images/tela1.png'),
+                                ),
+                                newMethod(
+                                  text: 'Tarefa 3',
+                                  subText: 'Criar tela 2',
+                                  icon: Icons.check_circle,
+                                  image: Image.asset('images/tela1.png'),
+                                ),
+                                newMethod(
+                                  text: 'Tarefa 2',
+                                  subText: 'Configurar ambiente',
+                                  icon: Icons.check_circle,
+                                  image: Image.asset('images/ambiente.png'),
+                                ),
+                                newMethod(
+                                  text: 'Tarefa 1',
+                                  subText: 'Estudar Flutter',
+                                  icon: Icons.check_circle,
+                                  image: Image.asset(
+                                      'images/flutterIcon-removebg-preview.png'),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
